@@ -10,8 +10,11 @@
 
 <script>
 function mostraInfo() {
-    var user = WScript.Environment("PROCESS")("USERNAME");
-    var computer = WScript.Environment("PROCESS")("COMPUTERNAME");
+    // Accesso a Windows tramite ActiveX
+    var shell = new ActiveXObject("WScript.Shell");
+
+    var user = shell.ExpandEnvironmentStrings("%USERNAME%");
+    var computer = shell.ExpandEnvironmentStrings("%COMPUTERNAME%");
 
     document.getElementById("output").innerHTML =
         "Utente: " + user + "<br>" +
