@@ -1,34 +1,3 @@
-<html>
-<head>
-
-<HTA:APPLICATION
-    APPLICATIONNAME="Info PC"
-    BORDER="thin"
-    SCROLL="no"
-    SINGLEINSTANCE="yes"
-/>
-
 <script>
-function mostraInfo() {
-    // Accesso a Windows tramite ActiveX
-    var shell = new ActiveXObject("WScript.Shell");
-
-    var user = shell.ExpandEnvironmentStrings("%USERNAME%");
-    var computer = shell.ExpandEnvironmentStrings("%COMPUTERNAME%");
-
-    document.getElementById("output").innerHTML =
-        "Utente: " + user + "<br>" +
-        "Computer: " + computer;
-}
+alert("TEST");
 </script>
-
-</head>
-
-<body>
-    <h2>HTA Info System</h2>
-
-    <button onclick="mostraInfo()">Mostra info PC</button>
-
-    <p id="output"></p>
-</body>
-</html>
