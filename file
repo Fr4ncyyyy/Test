@@ -1,0 +1,31 @@
+<html>
+<head>
+
+<HTA:APPLICATION
+    APPLICATIONNAME="Info PC"
+    BORDER="thin"
+    SCROLL="no"
+    SINGLEINSTANCE="yes"
+/>
+
+<script>
+function mostraInfo() {
+    var user = WScript.Environment("PROCESS")("USERNAME");
+    var computer = WScript.Environment("PROCESS")("COMPUTERNAME");
+
+    document.getElementById("output").innerHTML =
+        "Utente: " + user + "<br>" +
+        "Computer: " + computer;
+}
+</script>
+
+</head>
+
+<body>
+    <h2>HTA Info System</h2>
+
+    <button onclick="mostraInfo()">Mostra info PC</button>
+
+    <p id="output"></p>
+</body>
+</html>
